@@ -73,3 +73,11 @@ window.onload = function () {
     });
 
 };
+
+function openForm(price) {
+    document.getElementById("addressForm").style.display = "block";
+}
+function closeForm() {
+    document.getElementById("addressForm").style.display = "none";
+}
+
