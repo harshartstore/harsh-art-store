@@ -73,11 +73,11 @@ window.onload = function () {
     });
 
 };
-
 function openForm(price) {
     document.getElementById("addressForm").style.display = "block";
+    document.getElementById("price").value = price;
 }
+
 function closeForm() {
     document.getElementById("addressForm").style.display = "none";
 }
-
