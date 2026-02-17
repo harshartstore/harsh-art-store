@@ -116,3 +116,23 @@ button:hover {
     border-radius: 10px;
     margin-bottom: 10px;
 }
+.form-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #111;
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+    width: 300px;
+    z-index: 1000;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 6px;
+    border: none;
+}

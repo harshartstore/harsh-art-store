@@ -37,18 +37,20 @@
     <div class="card">
         <h3>Big artwork</h3>
         <p>₹25000</p>
-        <a href="https://rzp.io/rzp/C3A5A1hS" target="_blank">
-    <button>Buy Now</button>
-</a>
+  <button onclick="openShippingForm('https://rzp.io/rzp/C3A5A1hS')">
+    Buy Now
+</button>
+
 <img src="card1.jpg" alt="card">
     </div>
 
     <div class="card">
         <h3>Couple portrait</h3>
         <p>₹1200</p>
-             <a href="https://rzp.io/rzp/S8KSquA" target="_blank">
-    <button>Buy Now</button>
-</a>
+<button onclick="openShippingForm('https://rzp.io/rzp/S8KSquA')">
+    Buy Now
+</button>
+
         <img src="card2.jpg" alt="card">
     </div>
 
@@ -71,9 +73,10 @@
     <div class="card">
         <h3>Blue Horizon</h3>
         <p>₹35000</p>
-              <a href="https://rzp.io/rzp/za3VyLQ" target="_blank">
-    <button>Buy Now</button>
-</a>
+ <button onclick="openShippingForm('https://rzp.io/rzp/za3VyLQ')">
+    Buy Now
+</button>
+
         <img src="card3.jpg" alt="card">
     </div>
 </section>
@@ -136,6 +139,22 @@
 <button onclick="addReview()">Submit Review</button>
 <div id="reviewList"></div>
 </section>
+<div id="shippingForm" style="display:none;" class="form-box">
+
+    <h2>Shipping Details</h2>
+
+    <input type="text" id="custName" placeholder="Full Name" required>
+    <input type="text" id="custAddress" placeholder="Address" required>
+    <input type="text" id="custCity" placeholder="City" required>
+    <input type="text" id="custPincode" placeholder="Pincode" required>
+    <input type="text" id="custPhone" placeholder="Phone Number" required>
+
+    <br><br>
+
+    <button onclick="proceedToPayment()">Proceed to Payment</button>
+    <button onclick="closeShippingForm()">Cancel</button>
+
+</div>
 
 </body>
 </html>

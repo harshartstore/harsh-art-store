@@ -81,3 +81,32 @@ function openForm(price) {
 function closeForm() {
     document.getElementById("addressForm").style.display = "none";
 }
+let paymentLink = "";
+
+function openShippingForm(link) {
+    paymentLink = link;
+    document.getElementById("shippingForm").style.display = "block";
+}
+
+function closeShippingForm() {
+    document.getElementById("shippingForm").style.display = "none";
+}
+
+function proceedToPayment() {
+
+    let name = document.getElementById("custName").value;
+    let address = document.getElementById("custAddress").value;
+    let city = document.getElementById("custCity").value;
+    let pincode = document.getElementById("custPincode").value;
+    let phone = document.getElementById("custPhone").value;
+
+    if (!name || !address || !city || !pincode || !phone) {
+        alert("Please fill all details");
+        return;
+    }
+
+    // You can later store these in Google Sheets
+    window.open(paymentLink, "_blank");
+
+    closeShippingForm();
+}
