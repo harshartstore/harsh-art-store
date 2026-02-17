@@ -6,6 +6,22 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src="script.js"></script>
+    
+    <!-- Address Form -->
+<div id="addressForm" style="display:none;">
+    <h2>Enter Your Address</h2>
+    <input type="text" placeholder="Full Name" required>
+    <input type="text" placeholder="Address" required>
+    <input type="text" placeholder="City" required>
+    <input type="text" placeholder="Pincode" required>
+    <button>Proceed to Payment</button>
+    <button onclick="closeForm()">Cancel</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
 </head>
 <body>
 
@@ -21,7 +37,7 @@
     <div class="card">
         <h3>Silent Portrait</h3>
         <p>₹1500</p>
-        <button onclick="openForm(1500)">Buy Now</button>
+        <button onclick="openForm()">Buy Now</button>
     </div>
 </section>
 
@@ -32,7 +48,7 @@
     <div class="card">
         <h3>Blue Horizon</h3>
         <p>₹3500</p>
-        <button onclick="openForm(3500)">Buy Now</button>
+        <button onclick="openForm()">Buy Now</button>
     </div>
 </section>
 
