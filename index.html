@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Harsh Art Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Harsh Art Store</h1>
+    <p>Handmade Original Artworks</p>
+</header>
+
+<!-- Pencil Art Section -->
+<section class="pencil-section">
+    <h2>Pencil Art Collection</h2>
+
+    <div class="card">
+        <h3>Silent Portrait</h3>
+        <p>₹1500</p>
+        <button onclick="openForm(1500)">Buy Now</button>
+    </div>
+</section>
+
+<!-- Painting Section -->
+<section class="painting-section">
+    <h2>Painting Collection</h2>
+
+    <div class="card">
+        <h3>Blue Horizon</h3>
+        <p>₹3500</p>
+        <button onclick="openForm(3500)">Buy Now</button>
+    </div>
+</section>
+
+<!-- Shipping Form Popup -->
+<div id="form-popup" class="popup">
+    <div class="popup-content">
+        <h3>Enter Shipping Details</h3>
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="text" id="address" placeholder="Address">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <button onclick="payNow()">Proceed to Payment</button>
+        <button onclick="closeForm()">Cancel</button>
+    </div>
+</div>
+
+<!-- Review Section -->
+<section class="review-section">
+    <h2>Customer Reviews</h2>
+
+<input type="text" id="review-name" placeholder="Your Name">
+<input type="text" id="review-input" placeholder="Write your review...">
+
+<label>Delivery Service:</label>
+<select id="delivery-rating">
+    <option value="1">1 ⭐</option>
+    <option value="2">2 ⭐</option>
+    <option value="3">3 ⭐</option>
+    <option value="4">4 ⭐</option>
+    <option value="5">5 ⭐</option>
+</select>
+
+<label>Behaviour:</label>
+<select id="behaviour-rating">
+    <option value="1">1 ⭐</option>
+    <option value="2">2 ⭐</option>
+    <option value="3">3 ⭐</option>
+    <option value="4">4 ⭐</option>
+    <option value="5">5 ⭐</option>
+</select>
+
+<label>Customer Experience:</label>
+<select id="experience-rating">
+    <option value="1">1 ⭐</option>
+    <option value="2">2 ⭐</option>
+    <option value="3">3 ⭐</option>
+    <option value="4">4 ⭐</option>
+    <option value="5">5 ⭐</option>
+</select>
+
+<label>Customer Support:</label>
+<select id="support-rating">
+    <option value="1">1 ⭐</option>
+    <option value="2">2 ⭐</option>
+    <option value="3">3 ⭐</option>
+    <option value="4">4 ⭐</option>
+    <option value="5">5 ⭐</option>
+</select>
+
+<button onclick="addReview()">Submit Review</button>
+<div id="reviewList"></div>
+</section>
+
+</body>
+</html>
