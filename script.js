@@ -92,20 +92,39 @@ function closeShippingForm() {
     document.getElementById("shippingForm").style.display = "none";
 }
 
-function proceedToPayment() {
+
+function submitShippingAndPay() {
 
     let name = document.getElementById("custName").value;
     let address = document.getElementById("custAddress").value;
     let city = document.getElementById("custCity").value;
     let pincode = document.getElementById("custPincode").value;
     let phone = document.getElementById("custPhone").value;
+    let product = paymentLink; // or store product name separately
 
     if (!name || !address || !city || !pincode || !phone) {
-        alert("Please fill all details");
+        alert("Please fill all fields!");
         return;
     }
 
-    // You can later store these in Google Sheets
+    // Google Form POST
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScox8z5uYgypv_FAYaEI9I4jRvqWuYi_zEfEEd1xoHQeNO0hw/formResponse";
+
+    const formData = new FormData();
+    formData.append("entry.438195876", name);
+    formData.append("entry.2034393407", address);
+    formData.append("entry.1637147278", city);
+    formData.append("entry.338986151", pincode);
+    formData.append("entry.1922405515", phone);
+    formData.append("entry.96881697", product);
+
+    fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+    });
+
+    // Open Razorpay link
     window.open(paymentLink, "_blank");
 
     closeShippingForm();
