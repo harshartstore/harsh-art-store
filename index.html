@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Harsh Art Store</title>
+    <title>Harsh Art Gallery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+
 
     <!-- Address Form -->
 <div id="addressForm" style="display:none;">
@@ -20,13 +22,31 @@
 
 </body>
 </html>
+<img src="floral.png" class="floral">
 
 </head>
 <body>
 
 <header>
-    <h1>Harsh Art Store</h1>
+    <h1>Welcome to Harsh Art Gallery</h1>
+<p class="tagline">Where patience becomes detail.</p>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+<div id="sidebar" class="sidebar">
+   <a href="index.html">Home</a>
+   <a href="pencil.html">Pencil Art</a>
+   <a href="canvas.html">Canvas Painting</a>
+   <a href="paper.html">Paper Painting</a>
+   <a href="custom.html">Request Custom</a>
+</div>
     <p>Handmade Original Artworks</p>
+    <div class="logo-circle">
+   <img src="logo.jpg" alt="Logo">
+  
+</div>
+</div>
+
 </header>
 
 <!-- Pencil Art Section -->
@@ -36,7 +56,7 @@
 
     <div class="card">
         <h3>Big artwork</h3>
-        <p>₹25000</p>
+        <p>₹48000</p>
  <a href="https://docs.google.com/forms/d/e/1FAIpQLScox8z5uYgypv_FAYaEI9I4jRvqWuYi_zEfEEd1xoHQeNO0hw/viewform?usp=sharing&ouid=108046597371980455647" target="_blank">
     <button>Buy Now</button>
 </a>
@@ -70,7 +90,7 @@
 
     <div class="card">
         <h3>scenery painting</h3>
-        <p>₹35000</p>
+        <p>₹28000</p>
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSf57uXL9NznnMRHBB3M6rXL4WxbMxK_3jfCrBpHko4zx6lM0g/viewform?usp=sharing&ouid=108046597371980455647" target="_blank">
     <button>Buy Now</button>
 </a>
@@ -151,8 +171,21 @@
 
     <button onclick="submitShippingAndPay()">Proceed to Payment</button>
     <button onclick="closeShippingForm()">Cancel</button>
+    <script>
+function toggleMenu() {
+    let sidebar = document.getElementById("sidebar");
+    sidebar.style.right = sidebar.style.right === "0px" ? "-250px" : "0px";
+}
+</script>
+<footer>
+   <p>Email: <harshdeep class="pencil artist"></harshdeep>@email.com</p>
+   <p>Phone: +91-9953052950/p>
+   <button class="review-btn">Give Review</button>
+</footer>
+
 
 </div>
+
 
 </body>
 </html>
