@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphite Masterpiece – Harsh Art Gallery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    background-color: #0a0a0a;
+    font-family: 'Cormorant Garamond', serif;
+    color: #e8e8e8;
+    padding: 40px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.art-image img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.art-details h1 {
+    margin-top: 0;
+    font-size: 32px;
+    color: #00e5ff;
+}
+
+.price {
+    font-size: 22px;
+    margin: 15px 0;
+    color: #00e5ff;
+}
+
+.meta {
+    margin: 15px 0;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.description {
+    margin-top: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.buy-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    border: 1px solid #00e5ff;
+    color: #00e5ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: #00e5ff;
+    color: #0a0a0a;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="art-image">
+    <img src="pencil1.jpg" alt="Graphite Masterpiece">
+</div>
+
+<div class="art-details">
+    <h1>Graphite Masterpiece</h1>
+
+    <div class="price">₹ 48,000</div>
+
+    <div class="meta">
+        Size: 20 × 21.5 inches<br>
+        Medium: Graphite on Paper<br>
+        Year: 2026<br>
+        Availability: Original – One of One
+    </div>
+
+    <div class="description">
+        Completed over three months of layered graphite work, this piece explores form, discipline, and symbolic composition. Every section was constructed through careful structuring and tonal control, reflecting patience and technical depth.
+    </div>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScox8z5uYgypv_FAYaEI9I4jRvqWuYi_zEfEEd1xoHQeNO0hw/viewform?usp=pp_url&entry.96881697=graphite-masterpiece" target="_blank" class="buy-btn">
+    Request Purchase
+</a>
+
+
+</div>
+
+</div>
+    </div>  <!-- your gallery closing div if any -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("fade-in");
+});
+
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        const target = this.getAttribute("href");
+
+        if (target && !target.startsWith("#") && !this.hasAttribute("target")) {
+            e.preventDefault();
+            document.body.style.opacity = "0";
+            setTimeout(() => {
+                window.location.href = target;
+            }, 400);
+        }
+    });
+});
+</script>
+
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Horizon – Harsh Art Gallery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="style.css">
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="art-image">
+    <img src="canvas1.jpg" alt="Golden Horizon">
+</div>
+
+<div class="art-details">
+    
+    <h1>Golden Horizon</h1>
+<p class="description">
+Acrylic on canvas exploring warmth and light.
+</p>
+<p class="availability">Original Artwork • 1 of 1 • Available</p>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScox8z5uYgypv_FAYaEI9I4jRvqWuYi_zEfEEd1xoHQeNO0hw/viewform?usp=pp_url&entry.96881697=Golden-Horizon" 
+   target="_blank" 
+   class="buy-btn">
+   Request Purchase
+</a>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("fade-in");
+});
+
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        const target = this.getAttribute("href");
+
+        if (target && !target.startsWith("#") && !this.hasAttribute("target")) {
+            e.preventDefault();
+            document.body.style.opacity = "0";
+            setTimeout(() => {
+                window.location.href = target;
+            }, 400);
+        }
+    });
+});
+</script>

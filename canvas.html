@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh Art Gallery — Canvas Art</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1>Canvas Art Collection</h1>
+
+<div class="gallery">
+    <div class="card">
+        <img src="canvas1.jpg" alt="Golden Horizon">
+        <div class="card-info">
+            <h3>Golden Horizon</h3>
+            <p>Original – 2026</p>
+            <a href="canvas-golden-horizon.html" class="view-btn">View Full</a>
+        </div>
+    </div>
+</div>
+    </div>  <!-- your gallery closing div if any -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("fade-in");
+});
+
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        const target = this.getAttribute("href");
+
+        if (target && !target.startsWith("#") && !this.hasAttribute("target")) {
+            e.preventDefault();
+            document.body.style.opacity = "0";
+            setTimeout(() => {
+                window.location.href = target;
+            }, 400);
+        }
+    });
+});
+</script>
+
+</body>
+</html>

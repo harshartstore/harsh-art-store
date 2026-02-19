@@ -1,191 +1,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Harsh Art Gallery</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh Art Gallery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 
-    <!-- Address Form -->
-<div id="addressForm" style="display:none;">
-    <h2>Enter Your Address</h2>
-    <input type="text" placeholder="Full Name" required>
-    <input type="text" placeholder="Address" required>
-    <input type="text" placeholder="City" required>
-    <input type="text" placeholder="Pincode" required>
-    <button>Proceed to Payment</button>
-    <button onclick="closeForm()">Cancel</button>
+
+<style>
+
+body {
+    margin: 0;
+    background-color: #0a0a0a;
+    font-family: 'Cormorant Garamond', serif;
+    color: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.container {
+    width: 90%;
+    max-width: 420px;
+}
+
+.logo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 1px solid #c0c0c0;
+    margin: 0 auto 25px;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.tagline {
+    font-size: 15px;
+    opacity: 0.7;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.divider {
+    width: 60px;
+    height: 1px;
+    background-color: #c0c0c0;
+    margin: 25px auto;
+}
+
+.link-btn {
+    display: block;
+    margin: 18px 0;
+    padding: 14px;
+    border: 1px solid #c0c0c0;
+    text-decoration: none;
+    color: #e8e8e8;
+    transition: 0.4s ease;
+}
+
+.link-btn:hover {
+    background-color: #c0c0c0;
+    color: #0a0a0a;
+    letter-spacing: 2px;
+}
+
+.footer-note {
+    margin-top: 40px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+    <img src="logo.jpg" alt="Harsh Art Logo">
 </div>
+
+<h1>Harsh Art Gallery</h1>
+<p class="tagline">Where patience becomes form.</p>
+
+<div class="divider"></div>
+
+<a href="http://127.0.0.1:5500/pencil.html" class="link-btn">Pencil Art Collection</a>
+<a href="http://127.0.0.1:5500/canvas.html" class="link-btn">Canvas Paintings</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSd6IqSjWb8KroQSoZvECRK2UwisfipoLQyG-yZJDdLFKaeZ6w/viewform?usp=pp_url&entry.2017152660=in+evening+7+to+9+pm+(Indian+timeline,+can+also+vary+accordingly+to+the+difference+in+timelines+during+online+class)&entry.615282475=%E2%82%B9150+or+$1.65(usd)+students+can+convert+it+into+their+currency)" class="link-btn">join art classses</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfMq9LK7_BzJwMTosSlowYgc3Hez8zUVLzx01kYt9OwrbuksA/viewform?usp=header" class="link-btn">Request Custom Artwork</a>
+<a href="https://www.instagram.com/harshdeep_pencil_artist?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="link-btn">Instagram</a>
+
+
+<div class="footer-note">
+Original Works Only • One of One
+</div>
+
+</div>
+    </div>  <!-- your gallery closing div if any -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("fade-in");
+});
+
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        const target = this.getAttribute("href");
+
+        if (target && !target.startsWith("#") && !this.hasAttribute("target")) {
+            e.preventDefault();
+            document.body.style.opacity = "0";
+            setTimeout(() => {
+                window.location.href = target;
+            }, 400);
+        }
+    });
+});
+</script>
 
 </body>
 </html>
-<img src="floral.png" class="floral">
-
-</head>
-<body>
-
-<header>
-    <h1>Welcome to Harsh Art Gallery</h1>
-<p class="tagline">Where patience becomes detail.</p>
-
-    <div class="menu" onclick="toggleMenu()">☰</div>
-
-<div id="sidebar" class="sidebar">
-   <a href="index.html">Home</a>
-   <a href="pencil.html">Pencil Art</a>
-   <a href="canvas.html">Canvas Painting</a>
-   <a href="paper.html">Paper Painting</a>
-   <a href="custom.html">Request Custom</a>
-</div>
-    <p>Handmade Original Artworks</p>
-    <div class="logo-circle">
-   <img src="logo.jpg" alt="Logo">
-  
-</div>
-</div>
-
-</header>
-
-<!-- Pencil Art Section -->
-
-  <section class="pencil-section">
-    <h2>Pencil Art Collection</h2>
-
-    <div class="card">
-        <h3>Big artwork</h3>
-        <p>₹48000</p>
- <a href="https://docs.google.com/forms/d/e/1FAIpQLScox8z5uYgypv_FAYaEI9I4jRvqWuYi_zEfEEd1xoHQeNO0hw/viewform?usp=sharing&ouid=108046597371980455647" target="_blank">
-    <button>Buy Now</button>
-</a>
-<img src="card1.jpg" alt="card">
-    </div>
-
-    <div class="card">
-        <h3>Couple portrait</h3>
-        <p>₹1200</p>
- <a href="https://docs.google.com/forms/d/e/1FAIpQLScox8z5uYgypv_FAYaEI9I4jRvqWuYi_zEfEEd1xoHQeNO0hw/viewform?usp=sharing&ouid=108046597371980455647" target="_blank">
-    <button>Buy Now</button>
-</a>
-        <img src="card2.jpg" alt="card">
-    </div>
-
-    <div class="card">
-        <h3>Custom A4 Sketch</h3>
-        <p>₹750</p>
-        <button onclick="openForm(750)">/<a href="https://docs.google.com/forms/d/e/1FAIpQLSfMq9LK7_BzJwMTosSlowYgc3Hez8zUVLzx01kYt9OwrbuksA/viewform?usp=dialog" target="_blank">
-    <button>Submit Custom Request</button>
-</a>
->
-    </div>
-
-</section>
-
-
-<!-- Painting Section -->
-<section class="painting-section">
-    <h2>Painting Collection</h2>
-
-    <div class="card">
-        <h3>scenery painting</h3>
-        <p>₹28000</p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSf57uXL9NznnMRHBB3M6rXL4WxbMxK_3jfCrBpHko4zx6lM0g/viewform?usp=sharing&ouid=108046597371980455647" target="_blank">
-    <button>Buy Now</button>
-</a>
-
-        <img src="card3.jpg" alt="card">
-    </div>
-</section>
-
-<!-- Shipping Form Popup -->
-<div id="form-popup" class="popup">
-    <div class="popup-content">
-        <h3>Enter Shipping Details</h3>
-        <input type="text" id="name" placeholder="Full Name">
-        <input type="text" id="address" placeholder="Address">
-        <input type="text" id="phone" placeholder="Phone Number">
-        <button onclick="payNow()">Proceed to Payment</button>
-        <button onclick="closeForm()">Cancel</button>
-    </div>
-</div>
-
-<!-- Review Section -->
-<section class="review-section">
-    <h2>Customer Reviews</h2>
-
-<input type="text" id="review-name" placeholder="Your Name">
-<input type="text" id="review-input" placeholder="Write your review...">
-
-<label>Delivery Service:</label>
-<select id="delivery-rating">
-    <option value="1">1 ⭐</option>
-    <option value="2">2 ⭐</option>
-    <option value="3">3 ⭐</option>
-    <option value="4">4 ⭐</option>
-    <option value="5">5 ⭐</option>
-</select>
-
-<label>Behaviour:</label>
-<select id="behaviour-rating">
-    <option value="1">1 ⭐</option>
-    <option value="2">2 ⭐</option>
-    <option value="3">3 ⭐</option>
-    <option value="4">4 ⭐</option>
-    <option value="5">5 ⭐</option>
-</select>
-
-<label>Customer Experience:</label>
-<select id="experience-rating">
-    <option value="1">1 ⭐</option>
-    <option value="2">2 ⭐</option>
-    <option value="3">3 ⭐</option>
-    <option value="4">4 ⭐</option>
-    <option value="5">5 ⭐</option>
-</select>
-
-<label>Customer Support:</label>
-<select id="support-rating">
-    <option value="1">1 ⭐</option>
-    <option value="2">2 ⭐</option>
-    <option value="3">3 ⭐</option>
-    <option value="4">4 ⭐</option>
-    <option value="5">5 ⭐</option>
-</select>
-
-<button onclick="addReview()">Submit Review</button>
-<div id="reviewList"></div>
-</section>
-<div id="shippingForm" style="display:none;" class="form-box">
-
-    <h2>Shipping Details</h2>
-
-    <input type="text" id="custName" placeholder="Full Name" required>
-    <input type="text" id="custAddress" placeholder="Address" required>
-    <input type="text" id="custCity" placeholder="City" required>
-    <input type="text" id="custPincode" placeholder="Pincode" required>
-    <input type="text" id="custPhone" placeholder="Phone Number" required>
-
-    <br><br>
-
-    <button onclick="submitShippingAndPay()">Proceed to Payment</button>
-    <button onclick="closeShippingForm()">Cancel</button>
-    <script>
-function toggleMenu() {
-    let sidebar = document.getElementById("sidebar");
-    sidebar.style.right = sidebar.style.right === "0px" ? "-250px" : "0px";
-}
-</script>
-<footer>
-   <p>Email: <harshdeep class="pencil artist"></harshdeep>@email.com</p>
-   <p>Phone: +91-9953052950/p>
-   <button class="review-btn">Give Review</button>
-</footer>
-
-
-</div>
-
 
 </body>
 </html>
